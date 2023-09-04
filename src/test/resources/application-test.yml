@@ -13,8 +13,3 @@ spring:
   h2:
     console:
       enabled: true
-
-filter:
-  authenticate: true
-api:
-  key: aBc129
