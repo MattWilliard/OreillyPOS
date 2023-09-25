@@ -9,6 +9,7 @@ import com.oreillys.invoice.pos.dto.response.InvoiceDto;
 import com.oreillys.invoice.pos.dto.response.InvoiceResponseDto;
 import com.oreillys.invoice.pos.database.model.Invoice;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +18,10 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class InvoiceService {
 
-    @Autowired
-    OreillyPosClientImpl oreillyPosClient;
+    private final OreillyPosClientImpl oreillyPosClient;
 
     public ResponseEntity<Object> getInvoiceMap(int customerId) {
         List<InvoiceDto> invoiceDtoList = null;
